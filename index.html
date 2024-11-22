@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULADORA</title>
+
+    <style>
+
+body{
+    display: flex;
+   height: 900px ;
+   justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+#calc {
+background-color: gray;
+display: flex;
+flex-direction: column;
+width: 250px;
+height: 300px;
+   padding-top: 5px;
+   justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#mostrador{
+    background-color: white;
+    height: 45px;
+    width: 213px;
+    display: flex;
+    border-radius: 10px;
+    justify-content: flex-end;
+}
+
+#numeros{
+padding-top: 10px;
+display: flex;
+flex-wrap: wrap;
+    flex-direction: column;
+}
+
+    button{
+
+        width: 50px;
+        height: 50px;
+
+    }
+
+button:hover{
+    background-color: gray;
+}
+
+
+
+    </style>
+
+    <script>
+
+
+        var n1 = 0;
+        var n2 = 0;
+        var operador;
+
+
+
+
+
+        function btn_(parametro){
+        
+        if(document.getElementById("resultado").innerHTML == 0){
+        document.getElementById("resultado").innerHTML = parametro;
+        }
+        else{
+        document.getElementById("resultado").innerHTML += parametro;
+        }
+
+        }
+
+
+
+
+
+
+        function soma() {
+            operador = "+";
+            n1 = document.getElementById("resultado").innerHTML;
+            document.getElementById("resultado").innerHTML = 0;
+        }
+
+        function sub() {
+            operador = "-";
+            n1 = document.getElementById("resultado").innerHTML;
+            document.getElementById("resultado").innerHTML = 0;
+        }
+
+        function mult() {
+            operador = "*";
+            n1 = document.getElementById("resultado").innerHTML;
+            document.getElementById("resultado").innerHTML = 0;
+        }
+
+        function divisao() {
+            operador = "/";
+            n1 = document.getElementById("resultado").innerHTML;
+            document.getElementById("resultado").innerHTML = 0;
+        }
+
+        function resultar(){
+            n2 = document.getElementById("resultado").innerHTML;
+            if(operador == "+") document.getElementById("resultado").innerHTML = Number(n1) + Number(n2);
+            if(operador == "-") document.getElementById("resultado").innerHTML = Number(n1) - Number(n2);
+            if(operador == "*") document.getElementById("resultado").innerHTML = Number(n1) * Number(n2);
+            if(operador == "/") document.getElementById("resultado").innerHTML = Number(n1) / Number(n2);
+
+        }
+
+
+    </script>
+
+
+</head>
+
+<body>
+
+    <div id="pagina">
+
+    <div id="calc">
+
+    <div id="mostrador">
+
+
+        
+    <p id="resultado">0</p>
+
+</div>
+
+    <div id="numeros">
+
+    <div>
+    <button onclick="location.reload()">C</button> 
+    <button onclick="divisao()">÷</button>
+    <button onclick="mult()">x</button>
+    <button onclick="resultar()">=</button>
+    </div>
+
+
+    <div>
+    <button onclick="btn_(7)">7</button>
+    <button onclick="btn_(8)">8</button>
+    <button onclick="btn_(9)">9</button>
+    <button onclick="sub()">-</button>
+    </div>
+
+    <div>
+    <button onclick="btn_(4)">4</button>
+    <button onclick="btn_(5)">5</button>
+    <button onclick="btn_(6)">6</button>
+    <button onclick="soma()">+</button>
+    </div>
+
+    <div>
+    <button onclick="btn_(1)">1</button>
+    <button onclick="btn_(2)">2</button>
+    <button onclick="btn_(3)">3</button>
+    <button onclick="btn_(0)">0</button>
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
